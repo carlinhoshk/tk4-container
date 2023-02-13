@@ -1,4 +1,13 @@
+image:
+  file: Dockerfile
+
+ports:
+  - port: 3270
+    onOpen: open-preview
+  - port: 8038
+    onOpen: open-preview
+
 tasks:
-  start_container:
+  - name: Run Docker Container
     command: |
       docker run -d -p 3270:3270 -p 8038:8038 tk4-porta-32-80

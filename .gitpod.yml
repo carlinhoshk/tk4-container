@@ -7,4 +7,4 @@ ports:
 tasks:
   - name: Run Docker Container
     command: |
-      docker run -d -p 3270:3270 -p 8038:8038 --name tk4-porta-32-80 carlinhoshk/tk4-container-web
+      docker run -d -p 3270:3270 -p 8038:8038 carlinhoshk/tk4-container-web

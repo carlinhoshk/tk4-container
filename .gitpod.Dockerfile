@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -yq unzip gnucobol
 WORKDIR /tk4-/
 
 # lembrar que a vm azure da erro de certificado http
-RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip
+#RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip
 #ADD . /tk4-/
 RUN unzip tk4-_v1.00_current.zip && \
     rm -rf /tk4-/tk4-_v1.00_current.zip

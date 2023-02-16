@@ -3,7 +3,7 @@ FROM ubuntu:18.04 as builder
 RUN apt-get update && apt-get install -yq unzip wget
 WORKDIR /tk4-/
 
-RUN wget https://bloobstream.blob.core.windows.net/tk4-storage/tk4-_v1.00_current.zip /tk4-/
+RUN wget https://bloobstream.blob.core.windows.net/tk4-storage/tk4-_v1.00_current.zip 
 #RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip 
 RUN unzip tk4-_v1.00_current.zip && \
     rm -rf /tk4-/tk4-_v1.00_current.zip

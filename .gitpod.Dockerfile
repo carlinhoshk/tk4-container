@@ -1,18 +1,4 @@
-FROM ubuntu:18.04 as builder
-
-RUN apt-get update && apt-get install -yq unzip wget
-WORKDIR /tk4-/
-
-RUN wget https://bloobstream.blob.core.windows.net/tk4-storage/tk4-_v1.00_current.zip 
-#RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip 
-RUN unzip tk4-_v1.00_current.zip && \
-    rm -rf /tk4-/tk4-_v1.00_current.zip
-RUN echo "CONSOLE">/tk4-/unattended/mode
-RUN rm -rf /tk4-/hercules/darwin && \
-    rm -rf /tk4-/hercules/windows && \
-    rm -rf /tk4-/hercules/source 
-
-FROM gitpod/workspace-full
+FROM carlinhoshk/tk4-container-web
 
 RUN apt-get install -yq gnucobol 
 LABEL version="1.00"
@@ -21,4 +7,5 @@ WORKDIR /tk4-/
 COPY --from=builder /tk4-/ .
 VOLUME [ "/tk4-/conf","/tk4-/local_conf","/tk4-/local_scripts","/tk4-/prt","/tk4-/dasd","/tk4-/pch","/tk4-/jcl","tk4-/log" ]
 CMD ["/tk4-/mvs"]
+
 EXPOSE 3270 8038

@@ -2,7 +2,9 @@ FROM ubuntu:18.04 as builder
 
 RUN apt-get update && apt-get install -yq unzip gnucobol
 WORKDIR /tk4-/
-ADD http://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip /tk4-/
+
+#ADD http://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip /tk4-/
+RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip 
 RUN unzip tk4-_v1.00_current.zip && \
     rm -rf /tk4-/tk4-_v1.00_current.zip
 RUN echo "CONSOLE">/tk4-/unattended/mode

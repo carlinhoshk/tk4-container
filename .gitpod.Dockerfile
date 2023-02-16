@@ -1,21 +1,3 @@
-FROM ubuntu:latest as builder
-
-RUN apt-get update && apt-get install -yq unzip gnucobol
-WORKDIR /tk4-/
-
-# lembrar que a vm azure da erro de certificado http
-#RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip
-#ADD . /tk4-/
-#RUN unzip tk4-_v1.00_current.zip && \
-   # rm -rf /tk4-/tk4-_v1.00_current.zip
-
-# # daqui para baixo automatiza e abre porta web    
-# RUN echo "CONSOLE">/tk4-/unattended/mode
-# RUN rm -rf /tk4-/hercules/darwin && \
-#     rm -rf /tk4-/hercules/windows && \
-#     rm -rf /tk4-/hercules/source 
-
-    
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -yq \
     git \

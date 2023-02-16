@@ -1,6 +1,6 @@
 FROM ubuntu:latest as builder
 
-RUN apt-get update && apt-get install -yq unzip gnucobol
+RUN apt-get update && apt-get install -yq unzip 
 WORKDIR /tk4-/
 
 # lembrar que a vm azure da erro de certificado http

@@ -1,6 +1,6 @@
 FROM carlinhoshk/tk4-container-web
 
-RUN apt-get install gnucobol -y
+RUN apt-get update && apt-get install -yq gnucobol
 LABEL version="1.00"
 LABEL description="OS/VS2 MVS 3.8j Service Level 8505, Tur(n)key Level 4- Version 1.00"
 WORKDIR /tk4-/

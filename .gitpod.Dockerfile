@@ -1,4 +1,4 @@
-FROM gitpod/workspace-base:2022-05-08-14-31-53
+FROM gitpod/workspace-full:latest
 
 RUN apt-get update && apt-get install -yq unzip
 WORKDIR /tk4-/

@@ -1,5 +1,6 @@
 image:
-  -file: .gitpod.Dockerfile
+  file: .gitpod.Dockerfile
+  name: meu-workspace
 
 
 ports:

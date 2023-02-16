@@ -8,3 +8,8 @@ tasks:
   - name: Run Docker Container
     command: |
       docker run -d -p 3270:3270 -p 8038:8038 cf15c29b9caa
+
+tasks:
+  - name: Instalando GNU-COBOL
+    command: |
+      sudo apt-get install gnucobol -yq

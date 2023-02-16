@@ -3,6 +3,10 @@ ports:
     onOpen: open-preview
   - port: 8038
     onOpen: open-preview
+tasks:
+  - name: Instalando GNU-COBOL
+    command: |
+      sudo apt-get install gnucobol -y
 
 # tasks:
 #   - name: Run Docker Container
@@ -11,7 +15,3 @@ ports:
 
 # mudar o nome ou executar pelo nome
 
-tasks:
-  - name: Instalando GNU-COBOL
-    command: |
-      sudo apt-get install gnucobol -yq

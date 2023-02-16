@@ -1,6 +1,6 @@
 FROM ubuntu:18.04 as builder
 
-RUN apt-get update && apt-get install -yq unzip 
+RUN apt-get update && apt-get install -yq unzip wget
 WORKDIR /tk4-/
 
 RUN wget https://bloobstream.blob.core.windows.net/tk4-storage/tk4-_v1.00_current.zip /tk4-/

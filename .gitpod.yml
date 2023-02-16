@@ -1,13 +1,7 @@
 image:
   -file: .gitpod.Dockerfile
 
-before:
-  # Clona o repositório, se ainda não existe
-  - test -d Sigmod-COBOL || git clone https://github.com/carlinhoshk/Sigmod-COBOL.git Sigmod-COBOL
-  # Atualiza o repositório com git pull, se ele já existe
-  - test -d Sigmod-COBOL && cd Sigmod-COBOL && git pull
 
-  
 ports:
   - port: 3270
     onOpen: open-preview

@@ -1,6 +1,6 @@
 FROM ubuntu:18.04 as builder
 
-RUN apt-get update && apt-get install unzip gnucobol -yq
+RUN apt-get update && apt-get install -yq unzip 
 WORKDIR /tk4-/
 
 #ADD http://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip /tk4-/
@@ -12,8 +12,9 @@ RUN rm -rf /tk4-/hercules/darwin && \
     rm -rf /tk4-/hercules/windows && \
     rm -rf /tk4-/hercules/source 
 
-FROM ubuntu:18.04
+FROM gitpod/workspace-full
 
+RUN apt-get install -yq gnucobol 
 LABEL version="1.00"
 LABEL description="OS/VS2 MVS 3.8j Service Level 8505, Tur(n)key Level 4- Version 1.00"
 WORKDIR /tk4-/

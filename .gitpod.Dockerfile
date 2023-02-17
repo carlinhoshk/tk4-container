@@ -9,6 +9,8 @@ ENV BUILDKIT_FILENAME=buildkit-v${BUILDKIT_VERSION}.linux-amd64.tar.gz
 # Install custom tools, runtime, etc.
 RUN sudo su -c "cd /usr; curl -L https://github.com/moby/buildkit/releases/download/v${BUILDKIT_VERSION}/${BUILDKIT_FILENAME} | tar xvz"
 
+RUN apt-get install gnucobol -yq
+
 # lembrar que a vm azure da erro de certificado http
 RUN wget --no-check-certificate https://wotho.ethz.ch/tk4-/tk4-_v1.00_current.zip
 ADD . /tk4-/
